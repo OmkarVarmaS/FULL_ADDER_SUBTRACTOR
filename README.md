@@ -40,18 +40,61 @@ Borrow out = A'Bin + A'B + BBin
 
 **Procedure**
 
-Write the detailed procedure here
+Write the detailed procedure herE
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+Developed by:Priyadharshini Raja
+RegisterNumber:212223230160
 */
 
-**RTL Schematic**
+**full_adder:**
+```
+module fulladd_top(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+wire w1,w2,w3,w4;       
+xor(w1,a,b);
+xor(sum,w1,cin);        
 
-**Output Timing Waveform**
+and(w2,a,b);
+and(w3,b,cin);
+and(w4,cin,a);
+
+or(carry,w2,w3,w4);
+endmodule
+```
+
+**full_subtractor:**
+
+```
+module fullsub_top(a,b,Bin,BO,DIFF);
+input a,b,Bin;
+output BO,DIFF;
+assign DIFF = a ^ b ^ Bin;
+  assign BO = (a & b) | ((a ^ b) & Bin);
+endmodule
+```
+
+**output:**
+
+**full_adder:**
+![WhatsApp Image 2024-03-22 at 13 22 33_751daac3](https://github.com/Priya-dharshini-Raja/FULL_ADDER_SUBTRACTOR/assets/148514803/d831c588-61a1-4bd4-8619-b4aa0a01f09e)
+
+**full_subtractor:**
+![WhatsApp Image 2024-03-22 at 13 21 20_68ddb624](https://github.com/Priya-dharshini-Raja/FULL_ADDER_SUBTRACTOR/assets/148514803/1aaa6cb3-0c07-4452-bd0c-9b4d16c04109)
+
+
+
 
 **Result:**
+
+Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
+
+
+
+
 
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
 
